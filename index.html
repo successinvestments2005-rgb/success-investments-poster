@@ -90,10 +90,118 @@ h2{
 
 <input type="text" id="mobile" placeholder="Customer Mobile"><br><br>
 
-<button class="button" type="submit">Generate Poster</button>
+<button class="button" type="button" onclick="generatePoster()">
+    Generate Poster
+</button>
 <hr style="margin:40px 0;">
 
-<div id="poster"
+<div id="poster" style="display:none;background:white;
+max-width:900px;
+margin:40px auto;
+padding:35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.25);
+font-family:Arial;">
+
+<div style="text-align:center">
+
+<h1 style="color:#0047AB;font-size:42px;">
+SUCCESS INVESTMENTS
+</h1>
+
+<h2 style="color:#FDB913;">
+SBI LIFE INSURANCE
+</h2>
+
+<p style="font-size:18px;color:#555;">
+Secure Today • Prosper Tomorrow
+</p>
+
+</div>
+
+<hr>
+
+<h2 id="pName" style="color:#0047AB;"></h2>
+
+<table style="width:100%;font-size:20px;">
+
+<tr>
+<td><b>Age</b></td>
+<td id="pAge"></td>
+</tr>
+
+<tr>
+<td><b>Gender</b></td>
+<td id="pGender"></td>
+</tr>
+
+<tr>
+<td><b>Plan</b></td>
+<td id="pPlan"></td>
+</tr>
+
+<tr>
+<td><b>Premium Paying Term</b></td>
+<td id="pPPT"></td>
+</tr>
+
+<tr>
+<td><b>Policy Term</b></td>
+<td id="pPT"></td>
+</tr>
+
+<tr>
+<td><b>Annual Premium</b></td>
+<td id="pPremium"></td>
+</tr>
+
+<tr>
+<td><b>Life Cover</b></td>
+<td id="pCover"></td>
+</tr>
+
+<tr>
+<td><b>Maturity Benefit</b></td>
+<td id="pMaturity"></td>
+</tr>
+
+</table>
+
+<hr>
+
+<div style="background:#FFF8DC;
+padding:20px;
+border-radius:15px;">
+
+<h3 style="color:#006400;">
+Benefits
+</h3>
+
+✔ Financial Protection<br>
+✔ Tax Benefits*<br>
+✔ Long-term Wealth Creation<br>
+✔ Family Security<br>
+✔ Trusted SBI Life Solutions
+
+</div>
+
+<hr>
+
+<div style="text-align:center">
+
+<h2 style="color:#0047AB;">
+Contact Today
+</h2>
+
+<h3 id="pMobile"></h3>
+
+<h2 style="color:#FDB913;">
+SUCCESS INVESTMENTS
+</h2>
+
+</div>
+
+</div>
 style="
 display:none;
 background:#ffffff;
@@ -177,5 +285,44 @@ Secure Your Family Today
 </h2>
 
 </div>
+<script>
+
+function generatePoster() {
+
+document.getElementById("pName").innerHTML =
+document.getElementById("customerName").value;
+
+document.getElementById("pAge").innerHTML =
+document.getElementById("age").value;
+
+document.getElementById("pGender").innerHTML =
+document.getElementById("gender").value;
+
+document.getElementById("pPlan").innerHTML =
+document.getElementById("plan").value;
+
+document.getElementById("pPPT").innerHTML =
+document.getElementById("ppt").value;
+
+document.getElementById("pPT").innerHTML =
+document.getElementById("policyTerm").value;
+
+document.getElementById("pPremium").innerHTML =
+document.getElementById("premium").value;
+
+document.getElementById("pCover").innerHTML =
+document.getElementById("cover").value;
+
+document.getElementById("pMaturity").innerHTML =
+document.getElementById("maturity").value;
+
+document.getElementById("pMobile").innerHTML =
+document.getElementById("mobile").value;
+
+document.getElementById("poster").style.display="block";
+
+}
+
+</script>
 </body>
 </html>
