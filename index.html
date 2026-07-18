@@ -3,276 +3,194 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Success Investments Poster Generator</title>
 
-<style>
-body{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:linear-gradient(135deg,#d9f0ff,#0b4ea2);
-    color:white;
-}
-.container{
-    max-width:900px;
-    margin:40px auto;
-    text-align:center;
-}
-h1{
-    color:gold;
-    font-size:42px;
-}
-h2{
-    font-size:26px;
-}
-.button{
-    display:inline-block;
-    padding:15px 30px;
-    background:gold;
-    color:#003366;
-    text-decoration:none;
-    border-radius:10px;
-    font-size:20px;
-    font-weight:bold;
-    margin-top:30px;
-}
-.card{
-    background:white;
-    color:#003366;
-    padding:30px;
-    border-radius:15px;
-    margin-top:30px;
-}
-</style>
-input,
-select{
-    width:300px;
-    padding:12px;
-    margin:8px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-    font-size:16px;
-}
+<link rel="stylesheet" href="style.css">
 
-.button{
-    padding:14px 30px;
-    font-size:18px;
-    cursor:pointer;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
 <div class="container">
 
+<header>
+
 <h1>SUCCESS INVESTMENTS</h1>
 
-<h2>Insurance Poster Generator</h2>
+<h3>Professional Insurance Proposal Generator</h3>
+
+</header>
 
 <div class="card">
 
-<p>Create professional SBI Life posters within seconds.</p>
+<h2>Customer Details</h2>
 
-<p>✔️ Smart Swadhan Neo</p>
-<p>✔️ Mutual Funds</p>
-<p>✔️ Retirement Plans</p>
-<p>✔️ Child Education Plans</p>
-<p>✔️ Health Insurance</p>
+<div class="form-grid">
 
+<input type="text" id="customerName" placeholder="Customer Name">
 
-<form id="posterForm">
-
-<input type="text" id="customerName" placeholder="Customer Name"><br><br>
-
-<input type="number" id="age" placeholder="Age"><br><br>
+<input type="number" id="age" placeholder="Age">
 
 <select id="gender">
-    <option value="">Select Gender</option>
-    <option>Male</option>
-    <option>Female</option>
-</select><br><br>
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+</select>
 
-<input type="text" id="plan" placeholder="Plan Name"><br><br>
+<input type="text" id="plan" placeholder="Plan Name">
 
-<input type="text" id="ppt" placeholder="Premium Paying Term"><br><br>
+<input type="text" id="ppt" placeholder="Premium Paying Term">
 
-<input type="text" id="policyTerm" placeholder="Policy Term"><br><br>
+<input type="text" id="policyTerm" placeholder="Policy Term">
 
-<input type="text" id="premium" placeholder="Annual Premium"><br><br>
+<input type="text" id="premium" placeholder="Annual Premium">
 
-<input type="text" id="cover" placeholder="Life Cover"><br><br>
+<input type="text" id="cover" placeholder="Life Cover">
 
-<input type="text" id="maturity" placeholder="Maturity Benefit"><br><br>
+<input type="text" id="maturity" placeholder="Maturity Benefit">
 
-<input type="text" id="mobile" placeholder="Customer Mobile"><br><br>
+<input type="text" id="mobile" placeholder="Customer Mobile">
 
-<button class="button" type="button" onclick="generatePoster()">
+<input type="text" id="advisor" placeholder="Advisor Name">
+
+<input type="text" id="branch" placeholder="Branch">
+
+</div>
+
+<div class="button-row">
+
+<button onclick="generatePoster()">
 Generate Poster
 </button>
 
-</form>
-<hr style="margin:40px 0;">
+<button onclick="window.print()">
+Print
+</button>
 
-<div id="poster"
-style="display:none;
-background:white;
-max-width:900px;
-margin:40px auto;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-font-family:Arial;">
-<div>
-<div style="text-align:center">
-background:white;
-max-width:900px;
-margin:40px auto;
-padding:35px;
-border-radius:20px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
-font-family:Arial;">
-</div>
-<div style="text-align:center">
-<div>
-<h1 style="color:#0047AB;font-size:42px;">
-SUCCESS INVESTMENTS
-</h1>
-<div>
-<h2 style="color:#FDB913;">
-SBI LIFE INSURANCE
-</h2>
-<div>
-<p style="font-size:18px;color:#555;">
-Secure Today • Prosper Tomorrow
-</p>
+<button onclick="downloadPNG()">
+Download PNG
+</button>
+
+<button onclick="downloadPDF()">
+Download PDF
+</button>
+
+<button onclick="resetForm()">
+Reset
+</button>
 
 </div>
 
-<hr>
+</div>
 
-<h2 id="pName" style="color:#0047AB;"></h2>
+<div id="poster" class="poster">
 
-<table style="width:100%;font-size:20px;">
+<div class="poster-header">
+
+<h1>SUCCESS INVESTMENTS</h1>
+
+<h2>SBI LIFE INSURANCE</h2>
+
+<p>Secure Today • Prosper Tomorrow</p>
+
+</div>
+
+<table>
 
 <tr>
-<td><b>Age</b></td>
+<td>Customer Name</td>
+<td id="pName"></td>
+</tr>
+
+<tr>
+<td>Age</td>
 <td id="pAge"></td>
 </tr>
 
 <tr>
-<td><b>Gender</b></td>
+<td>Gender</td>
 <td id="pGender"></td>
 </tr>
 
 <tr>
-<td><b>Plan</b></td>
+<td>Plan</td>
 <td id="pPlan"></td>
 </tr>
 
 <tr>
-<td><b>Premium Paying Term</b></td>
+<td>Premium Paying Term</td>
 <td id="pPPT"></td>
 </tr>
 
 <tr>
-<td><b>Policy Term</b></td>
+<td>Policy Term</td>
 <td id="pPT"></td>
 </tr>
 
 <tr>
-<td><b>Annual Premium</b></td>
+<td>Annual Premium</td>
 <td id="pPremium"></td>
 </tr>
 
 <tr>
-<td><b>Life Cover</b></td>
+<td>Life Cover</td>
 <td id="pCover"></td>
 </tr>
 
 <tr>
-<td><b>Maturity Benefit</b></td>
+<td>Maturity Benefit</td>
 <td id="pMaturity"></td>
+</tr>
+
+<tr>
+<td>Customer Mobile</td>
+<td id="pMobile"></td>
+</tr>
+
+<tr>
+<td>Advisor</td>
+<td id="pAdvisor"></td>
+</tr>
+
+<tr>
+<td>Branch</td>
+<td id="pBranch"></td>
 </tr>
 
 </table>
 
-<hr>
+<div class="benefits">
 
-<div style="background:#FFF8DC;
-padding:20px;
-border-radius:15px;">
+<h3>Benefits</h3>
 
-<h3 style="color:#006400;">
-Benefits
-</h3>
-
-✔ Financial Protection<br>
-✔ Tax Benefits*<br>
-✔ Long-term Wealth Creation<br>
-✔ Family Security<br>
-✔ Trusted SBI Life Solutions
+<ul>
+<li>Financial Protection</li>
+<li>Tax Benefits*</li>
+<li>Long-Term Wealth Creation</li>
+<li>Guaranteed Benefits*</li>
+<li>Family Security</li>
+<li>Trusted SBI Life Solutions</li>
+</ul>
 
 </div>
 
-<hr>
+<div class="footer">
 
-<div style="text-align:center">
+<h2>SUCCESS INVESTMENTS</h2>
 
-<h2 style="color:#0047AB;">
-Contact Today
-</h2>
-
-<h3 id="pMobile"></h3>
-
-<h2 style="color:#FDB913;">
-SUCCESS INVESTMENTS
-</h2>
+<p>Your Trusted Financial Partner</p>
 
 </div>
 
-
-</form>
+</div>
 
 </div>
 
+<script src="script.js"></script>
 
-<script>
-
-function generatePoster() {
-
-document.getElementById("pName").innerHTML =
-document.getElementById("customerName").value;
-
-document.getElementById("pAge").innerHTML =
-document.getElementById("age").value;
-
-document.getElementById("pGender").innerHTML =
-document.getElementById("gender").value;
-
-document.getElementById("pPlan").innerHTML =
-document.getElementById("plan").value;
-
-document.getElementById("pPPT").innerHTML =
-document.getElementById("ppt").value;
-
-document.getElementById("pPT").innerHTML =
-document.getElementById("policyTerm").value;
-
-document.getElementById("pPremium").innerHTML =
-document.getElementById("premium").value;
-
-document.getElementById("pCover").innerHTML =
-document.getElementById("cover").value;
-
-document.getElementById("pMaturity").innerHTML =
-document.getElementById("maturity").value;
-
-document.getElementById("pMobile").innerHTML =
-document.getElementById("mobile").value;
-
-document.getElementById("poster").style.display = "block";
-
-}
-
-</script>
 </body>
 </html>
