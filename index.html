@@ -3,25 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Success Investments Poster Generator</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="form-card">
+
+<h1>SUCCESS INVESTMENTS</h1>
+<p class="subtitle">Professional SBI Life Poster Generator</p>
+
+<input id="customerName" placeholder="Customer Name">
+
+<input id="age" type="number" placeholder="Age">
+
+<select id="gender">
+<option>Male</option>
+<option>Female</option>
+</select>
+
+<input id="plan" placeholder="Plan Name">
+
+<input id="ppt" placeholder="Premium Paying Term">
+
+<input id="policyTerm" placeholder="Policy Term">
+
+<input id="premium" placeholder="Annual Premium">
+
+<input id="cover" placeholder="Life Cover">
+
+<input id="maturity" placeholder="Maturity Benefit">
+
+<input id="mobile" placeholder="Mobile Number">
+
+<button onclick="generatePoster()">
+Generate Premium Poster
+</button>
+
+</div>
+
+<div id="poster" class="poster" style="display:none;">
+
+<div class="header">
+<h1>SUCCESS INVESTMENTS</h1>
+<h2>SBI LIFE INSURANCE</h2>
+<p>Secure Today • Prosper Tomorrow</p>
+</div>
+
 <h2 id="pName"></h2>
 
-<td id="pAge"></td>
-<td id="pGender"></td>
-<td id="pPlan"></td>
-<td id="pPPT"></td>
-<td id="pPT"></td>
-<td id="pPremium"></td>
-<td id="pCover"></td>
-<td id="pMaturity"></td>
+<table>
+
+<tr><td>Age</td><td id="pAge"></td></tr>
+<tr><td>Gender</td><td id="pGender"></td></tr>
+<tr><td>Plan</td><td id="pPlan"></td></tr>
+<tr><td>Premium Paying Term</td><td id="pPPT"></td></tr>
+<tr><td>Policy Term</td><td id="pPT"></td></tr>
+<tr><td>Annual Premium</td><td id="pPremium"></td></tr>
+<tr><td>Life Cover</td><td id="pCover"></td></tr>
+<tr><td>Maturity Benefit</td><td id="pMaturity"></td></tr>
+
+</table>
+
+<div class="benefits">
+
+<h3>Benefits</h3>
+
+✔ Financial Protection<br>
+✔ Tax Benefits*<br>
+✔ Long-Term Wealth Creation<br>
+✔ Family Security<br>
+✔ SBI Life Trusted Plans
+
+</div>
 
 <h3 id="pMobile"></h3>
-customerName
-age
-gender
-plan
-ppt
-policyTerm
-premium
-cover
-maturity
-mobile
+
+</div>
+
+</div>
+
+<script>
+
+function generatePoster(){
+
+document.getElementById("poster").style.display="block";
+
+pName.innerHTML=customerName.value;
+pAge.innerHTML=age.value;
+pGender.innerHTML=gender.value;
+pPlan.innerHTML=plan.value;
+pPPT.innerHTML=ppt.value;
+pPT.innerHTML=policyTerm.value;
+pPremium.innerHTML=premium.value;
+pCover.innerHTML=cover.value;
+pMaturity.innerHTML=maturity.value;
+pMobile.innerHTML=mobile.value;
+
+}
+
+</script>
+
+</body>
+</html>
