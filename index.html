@@ -76,19 +76,28 @@ h2{
 <option>Female</option>
 </select>
 
-<input type="text" id="plan" placeholder="Plan Name"><br><br>
+<input type="text" id="customerName">
 
-<input type="number" id="payterm" placeholder="Premium Paying Term"><br><br>
+<input type="number" id="age">
 
-<input type="number"id="policyterm" placeholder="Policy Term"><br><br>
+<select id="gender">
+    <option>Male</option>
+    <option>Female</option>
+</select>
 
-<input type="text" id="premium" placeholder="Annual Premium"><br><br>
+<input type="text" id="plan">
 
-<input type="text" id="cover" placeholder="Life Cover (Sum Assured)"><br><br>
+<input type="text" id="ppt">
 
-<input type="text" id="maturity" placeholder="Maturity Benefit"><br><br>
+<input type="text" id="policyTerm">
 
-<input type="text" id="mobile" placeholder="Customer Mobile"><br><br>
+<input type="text" id="premium">
+
+<input type="text" id="cover">
+
+<input type="text" id="maturity">
+
+<input type="text" id="mobile">
 
 <button class="button" type="button" onclick="generatePoster()">
     Generate Poster
@@ -243,7 +252,7 @@ document.getElementById("maturity").value;
 document.getElementById("pMobile").innerHTML =
 document.getElementById("mobile").value;
 
-document.getElementById("poster").style.display="block";
+document.getElementById("poster").style.display = "block";
 
 }
 
