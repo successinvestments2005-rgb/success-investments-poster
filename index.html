@@ -66,16 +66,6 @@ h2{
 
 <form id="posterForm">
 
-<input type="text" id="name" placeholder="Customer Name">
-
-<input type="number" id="age" placeholder="Age" required><br><br>
-
-<select id="gender">
-<option value="">Select Gender</option>
-<option>Male</option>
-<option>Female</option>
-</select>
-
 <input type="text" id="customerName">
 
 <input type="number" id="age">
@@ -85,23 +75,44 @@ h2{
     <option>Female</option>
 </select>
 
-<input type="text" id="plan">
+<input type="text" id="customerName">
 
-<input type="text" id="ppt">
+<input type="number" id="age">
 
-<input type="text" id="policyTerm">
+<select id="gender">
+    <option>Male</option>
+    <option>Female</option>
+<form id="posterForm">
 
-<input type="text" id="premium">
+<input type="text" id="customerName" placeholder="Customer Name"><br><br>
 
-<input type="text" id="cover">
+<input type="number" id="age" placeholder="Age"><br><br>
 
-<input type="text" id="maturity">
+<select id="gender">
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+</select><br><br>
 
-<input type="text" id="mobile">
+<input type="text" id="plan" placeholder="Plan Name"><br><br>
+
+<input type="text" id="ppt" placeholder="Premium Paying Term"><br><br>
+
+<input type="text" id="policyTerm" placeholder="Policy Term"><br><br>
+
+<input type="text" id="premium" placeholder="Annual Premium"><br><br>
+
+<input type="text" id="cover" placeholder="Life Cover"><br><br>
+
+<input type="text" id="maturity" placeholder="Maturity Benefit"><br><br>
+
+<input type="text" id="mobile" placeholder="Customer Mobile"><br><br>
 
 <button class="button" type="button" onclick="generatePoster()">
-    Generate Poster
+Generate Poster
 </button>
+
+</form>
 <hr style="margin:40px 0;">
 
 <div id="poster"
